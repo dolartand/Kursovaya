@@ -24,7 +24,7 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHeaderView, QLabel,
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
+            MainWindow.setObjectName(u"Книга компьютерной техники")
         MainWindow.resize(800, 616)
         MainWindow.setStyleSheet(u"QMainWindow {\n"
 "background-color: qlineargradient(\n"
@@ -355,7 +355,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Книга компьютерной техники", None))
         self.action.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0420\u0433\u0440\u0430\u043c\u043c\u0430", None))
         self.add_action.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u043f\u0438\u0441\u044c", None))
         self.delete_action.setText(QCoreApplication.translate("MainWindow", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0437\u0430\u043f\u0438\u0441\u044c", None))

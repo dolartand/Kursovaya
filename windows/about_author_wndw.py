@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QLabel,
 class Ui_wndw_about_author(object):
     def setupUi(self, wndw_about_author):
         if not wndw_about_author.objectName():
-            wndw_about_author.setObjectName(u"wndw_about_author")
+            wndw_about_author.setObjectName(u"Об авторе")
         wndw_about_author.resize(400, 528)
         wndw_about_author.setStyleSheet(u"background-color: qlineargradient(\n"
 "        spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
@@ -99,7 +99,7 @@ class Ui_wndw_about_author(object):
     # setupUi
 
     def retranslateUi(self, wndw_about_author):
-        wndw_about_author.setWindowTitle(QCoreApplication.translate("wndw_about_author", u"Dialog", None))
+        wndw_about_author.setWindowTitle(QCoreApplication.translate("wndw_about_author", u"Об авторе", None))
         self.label.setText("")
         self.label_2.setText(QCoreApplication.translate("wndw_about_author", u"\u0410\u0432\u0442\u043e\u0440", None))
         self.label_3.setText(QCoreApplication.translate("wndw_about_author", u"\u0421\u0442\u0443\u0434\u0435\u043d\u0442 \u0433\u0440\u0443\u043f\u043f\u044b 10701323", None))

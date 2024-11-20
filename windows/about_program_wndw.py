@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QLabel,
 class Ui_wndw_about_program(object):
     def setupUi(self, wndw_about_program):
         if not wndw_about_program.objectName():
-            wndw_about_program.setObjectName(u"wndw_about_program")
+            wndw_about_program.setObjectName(u"О программе")
         wndw_about_program.resize(807, 509)
         wndw_about_program.setStyleSheet(u"background-color: qlineargradient(\n"
 "        spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
@@ -95,7 +95,7 @@ class Ui_wndw_about_program(object):
     # setupUi
 
     def retranslateUi(self, wndw_about_program):
-        wndw_about_program.setWindowTitle(QCoreApplication.translate("wndw_about_program", u"Dialog", None))
+        wndw_about_program.setWindowTitle(QCoreApplication.translate("wndw_about_program", u"О программе", None))
         self.lbl_gif.setText("")
         self.label_2.setText(QCoreApplication.translate("wndw_about_program", u"\u041a\u043d\u0438\u0433\u0430 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u043e\u0439 \u0442\u0435\u0445\u043d\u0438\u043a\u0438", None))
         self.textEdit.setHtml(QCoreApplication.translate("wndw_about_program", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"

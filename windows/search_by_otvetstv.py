@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHeaderView,
 class Ui_wndw_search_by_otvetstv(object):
     def setupUi(self, wndw_search_by_otvetstv):
         if not wndw_search_by_otvetstv.objectName():
-            wndw_search_by_otvetstv.setObjectName(u"wndw_search_by_otvetstv")
+            wndw_search_by_otvetstv.setObjectName(u"Поиск")
         wndw_search_by_otvetstv.resize(400, 388)
         wndw_search_by_otvetstv.setStyleSheet(u"background-color: qlineargradient(\n"
 "        spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
@@ -91,7 +91,7 @@ class Ui_wndw_search_by_otvetstv(object):
     # setupUi
 
     def retranslateUi(self, wndw_search_by_otvetstv):
-        wndw_search_by_otvetstv.setWindowTitle(QCoreApplication.translate("wndw_search_by_otvetstv", u"Dialog", None))
+        wndw_search_by_otvetstv.setWindowTitle(QCoreApplication.translate("wndw_search_by_otvetstv", u"Поиск", None))
         self.lbl_search_by_otvetstv.setText(QCoreApplication.translate("wndw_search_by_otvetstv", u"\u041f\u043e\u0438\u0441\u043a \u043f\u043e \u0444\u0430\u043c\u0438\u043b\u0438\u0438 \u043e\u0442\u0432\u0435\u0442\u0441\u0432\u0435\u043d\u043d\u043e\u0433\u043e", None))
         self.lbl_enter_fam.setText(QCoreApplication.translate("wndw_search_by_otvetstv", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0444\u0430\u043c\u0438\u043b\u0438\u044e", None))
         self.pb_show.setText(QCoreApplication.translate("wndw_search_by_otvetstv", u"\u0412\u044b\u0432\u0435\u0441\u0442\u0438", None))

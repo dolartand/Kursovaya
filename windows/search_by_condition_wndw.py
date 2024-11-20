@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QFrame,
 class Ui_search_by_condition_wndw(object):
     def setupUi(self, search_by_condition_wndw):
         if not search_by_condition_wndw.objectName():
-            search_by_condition_wndw.setObjectName(u"search_by_condition_wndw")
+            search_by_condition_wndw.setObjectName(u"Поиск")
         search_by_condition_wndw.resize(400, 394)
         search_by_condition_wndw.setStyleSheet(u"background-color: qlineargradient(\n"
 "        spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
@@ -94,7 +94,7 @@ class Ui_search_by_condition_wndw(object):
     # setupUi
 
     def retranslateUi(self, search_by_condition_wndw):
-        search_by_condition_wndw.setWindowTitle(QCoreApplication.translate("search_by_condition_wndw", u"Dialog", None))
+        search_by_condition_wndw.setWindowTitle(QCoreApplication.translate("search_by_condition_wndw", u"Поиск", None))
         self.lbl_search_by_condition.setText(QCoreApplication.translate("search_by_condition_wndw", u"\u041f\u043e\u0438\u0441\u043a \u043f\u043e \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u044e \u0442\u0435\u0445\u043d\u0438\u043a\u0438", None))
         self.lbl_enter_condition.setText(QCoreApplication.translate("search_by_condition_wndw", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435", None))
         self.pb_show.setText(QCoreApplication.translate("search_by_condition_wndw", u"\u0412\u044b\u0432\u0435\u0441\u0442\u0438", None))

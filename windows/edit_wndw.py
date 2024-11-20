@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QFrame,
 class Ui_wndw_edit(object):
     def setupUi(self, wndw_edit):
         if not wndw_edit.objectName():
-            wndw_edit.setObjectName(u"wndw_edit")
+            wndw_edit.setObjectName(u"Редактирование записи")
         wndw_edit.resize(400, 464)
         wndw_edit.setStyleSheet(u"background-color: qlineargradient(\n"
 "        spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
@@ -171,7 +171,7 @@ class Ui_wndw_edit(object):
     # setupUi
 
     def retranslateUi(self, wndw_edit):
-        wndw_edit.setWindowTitle(QCoreApplication.translate("wndw_edit", u"Dialog", None))
+        wndw_edit.setWindowTitle(QCoreApplication.translate("wndw_edit", u"Редактирование записи", None))
         self.lbl_edit.setText(QCoreApplication.translate("wndw_edit", u"\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0437\u0430\u043f\u0438\u0441\u0438", None))
         self.gb_new_data.setTitle(QCoreApplication.translate("wndw_edit", u"\u041d\u043e\u0432\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435", None))
         self.cb_type_tech.setItemText(0, QCoreApplication.translate("wndw_edit", u"\u041f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0440", None))

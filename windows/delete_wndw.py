@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QLabel,
 class Ui_wndw_delete(object):
     def setupUi(self, wndw_delete):
         if not wndw_delete.objectName():
-            wndw_delete.setObjectName(u"wndw_delete")
+            wndw_delete.setObjectName(u"Удаление записи")
         wndw_delete.resize(382, 210)
         wndw_delete.setStyleSheet(u"background-color: qlineargradient(\n"
 "        spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
@@ -96,7 +96,7 @@ class Ui_wndw_delete(object):
     # setupUi
 
     def retranslateUi(self, wndw_delete):
-        wndw_delete.setWindowTitle(QCoreApplication.translate("wndw_delete", u"Dialog", None))
+        wndw_delete.setWindowTitle(QCoreApplication.translate("wndw_delete", u"Удаление записи", None))
         self.lbl_delete.setText(QCoreApplication.translate("wndw_delete", u"\u0423\u0434\u0430\u043b\u0435\u043d\u0438\u0435 \u0437\u0430\u043f\u0438\u0441\u0438", None))
         self.lbl_really_delete.setText(QCoreApplication.translate("wndw_delete", u"\u0412\u044b \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0445\u043e\u0442\u0438\u0442\u0435 \u0443\u0434\u0430\u043b\u0438\u0442\u044c \u0437\u0430\u043f\u0438\u0441\u044c?", None))
         self.pb_yes.setText(QCoreApplication.translate("wndw_delete", u"\u0414\u0430", None))

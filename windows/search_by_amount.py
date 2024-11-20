@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHeaderView,
 class Ui_search_by_amount_wndw(object):
     def setupUi(self, search_by_amount_wndw):
         if not search_by_amount_wndw.objectName():
-            search_by_amount_wndw.setObjectName(u"search_by_amount_wndw")
+            search_by_amount_wndw.setObjectName(u"Поиск")
         search_by_amount_wndw.resize(400, 393)
         search_by_amount_wndw.setStyleSheet(u"background-color: qlineargradient(\n"
 "        spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
@@ -92,7 +92,7 @@ class Ui_search_by_amount_wndw(object):
     # setupUi
 
     def retranslateUi(self, search_by_amount_wndw):
-        search_by_amount_wndw.setWindowTitle(QCoreApplication.translate("search_by_amount_wndw", u"Dialog", None))
+        search_by_amount_wndw.setWindowTitle(QCoreApplication.translate("search_by_amount_wndw", u"Поиск", None))
         self.lbl_search_by_amount.setText(QCoreApplication.translate("search_by_amount_wndw", u"\u041f\u043e\u0438\u0441\u043a \u043f\u043e \u043a\u043e\u043b-\u0432\u0443 \u043d\u0430 \u0441\u043a\u043b\u0430\u0434\u0435", None))
         self.lbl_enter_amount.setText(QCoreApplication.translate("search_by_amount_wndw", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043a\u043e\u043b-\u0432\u043e", None))
         self.pb_show.setText(QCoreApplication.translate("search_by_amount_wndw", u"\u0412\u044b\u0432\u0435\u0441\u0442\u0438", None))

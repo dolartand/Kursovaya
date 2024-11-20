@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QLabel,
 class Ui_help_wndw(object):
     def setupUi(self, help_wndw):
         if not help_wndw.objectName():
-            help_wndw.setObjectName(u"help_wndw")
+            help_wndw.setObjectName(u"Помощь")
         help_wndw.resize(802, 468)
         help_wndw.setStyleSheet(u"background-color: qlineargradient(\n"
 "        spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
@@ -76,7 +76,7 @@ class Ui_help_wndw(object):
     # setupUi
 
     def retranslateUi(self, help_wndw):
-        help_wndw.setWindowTitle(QCoreApplication.translate("help_wndw", u"Dialog", None))
+        help_wndw.setWindowTitle(QCoreApplication.translate("help_wndw", u"Помощь", None))
         self.textEdit.setHtml(QCoreApplication.translate("help_wndw", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

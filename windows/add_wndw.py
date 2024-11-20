@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QDialog, QFrame,
 class Ui_wndw_add(object):
     def setupUi(self, wndw_add):
         if not wndw_add.objectName():
-            wndw_add.setObjectName(u"wndw_add")
+            wndw_add.setObjectName(u"Добавление записи")
         wndw_add.resize(400, 543)
         wndw_add.setStyleSheet(u"background-color: qlineargradient(\n"
 "        spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
@@ -201,7 +201,7 @@ class Ui_wndw_add(object):
     # setupUi
 
     def retranslateUi(self, wndw_add):
-        wndw_add.setWindowTitle(QCoreApplication.translate("wndw_add", u"Dialog", None))
+        wndw_add.setWindowTitle(QCoreApplication.translate("wndw_add", u"Добавление записи", None))
         self.lbl_number_aud.setText(QCoreApplication.translate("wndw_add", u"\u041d\u043e\u043c\u0435\u0440 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0438", None))
         self.lbl_name.setText(QCoreApplication.translate("wndw_add", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435", None))
         self.lbl_year.setText(QCoreApplication.translate("wndw_add", u"\u0413\u043e\u0434 \u0432\u044b\u043f\u0443\u0441\u043a\u0430", None))

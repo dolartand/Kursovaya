@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (QApplication, QDialog, QLabel, QPushButton,
 class Ui_wndw_splash_screen(object):
     def setupUi(self, wndw_splash_screen):
         if not wndw_splash_screen.objectName():
-            wndw_splash_screen.setObjectName(u"wndw_splash_screen")
+            wndw_splash_screen.setObjectName(u"SplashScreen")
         wndw_splash_screen.resize(807, 520)
         wndw_splash_screen.setStyleSheet(u"background-color: white;")
         self.label = QLabel(wndw_splash_screen)
@@ -110,7 +110,7 @@ class Ui_wndw_splash_screen(object):
     # setupUi
 
     def retranslateUi(self, wndw_splash_screen):
-        wndw_splash_screen.setWindowTitle(QCoreApplication.translate("wndw_splash_screen", u"Dialog", None))
+        wndw_splash_screen.setWindowTitle(QCoreApplication.translate("wndw_splash_screen", u"SplashScreen", None))
         self.label.setText(QCoreApplication.translate("wndw_splash_screen", u"\u0411\u0435\u043b\u043e\u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u043d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0438\u0442\u0435\u0442", None))
         self.label_2.setText(QCoreApplication.translate("wndw_splash_screen", u"\u0424\u0430\u043a\u0443\u043b\u044c\u0442\u0435\u0442 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0445 \u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0439 \u0438 \u0440\u043e\u0431\u043e\u0442\u043e\u0442\u0435\u0445\u043d\u0438\u043a\u0438", None))
         self.label_3.setText(QCoreApplication.translate("wndw_splash_screen", u"\u041a\u0430\u0444\u0435\u0434\u0440\u0430 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u043d\u043e\u0433\u043e \u043e\u0431\u0435\u0441\u043f\u0435\u0447\u0435\u043d\u0438\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u043e\u043d\u043d\u044b\u0445 \u0442\u0435\u0445\u043d\u043e\u043b\u043e\u0433\u0438\u0439", None))

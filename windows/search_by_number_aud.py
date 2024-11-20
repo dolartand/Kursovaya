@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHeaderView,
 class Ui_wndw_search_by_numbe_aud(object):
     def setupUi(self, wndw_search_by_numbe_aud):
         if not wndw_search_by_numbe_aud.objectName():
-            wndw_search_by_numbe_aud.setObjectName(u"wndw_search_by_numbe_aud")
+            wndw_search_by_numbe_aud.setObjectName(u"Поиск")
         wndw_search_by_numbe_aud.resize(400, 393)
         wndw_search_by_numbe_aud.setStyleSheet(u"background-color: qlineargradient(\n"
 "        spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
@@ -91,7 +91,7 @@ class Ui_wndw_search_by_numbe_aud(object):
     # setupUi
 
     def retranslateUi(self, wndw_search_by_numbe_aud):
-        wndw_search_by_numbe_aud.setWindowTitle(QCoreApplication.translate("wndw_search_by_numbe_aud", u"Dialog", None))
+        wndw_search_by_numbe_aud.setWindowTitle(QCoreApplication.translate("wndw_search_by_numbe_aud", u"Поиск", None))
         self.lbl_search_by_number.setText(QCoreApplication.translate("wndw_search_by_numbe_aud", u"\u041f\u043e\u0438\u0441\u043a \u043f\u043e \u043d\u043e\u043c\u0435\u0440\u0443 \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u0438", None))
         self.lbl_enter_number.setText(QCoreApplication.translate("wndw_search_by_numbe_aud", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043d\u043e\u043c\u0435\u0440 \u0430\u0443\u0434.", None))
         self.pb_show.setText(QCoreApplication.translate("wndw_search_by_numbe_aud", u"\u0412\u044b\u0432\u0435\u0441\u0442\u0438", None))

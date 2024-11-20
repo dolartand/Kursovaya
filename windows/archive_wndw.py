@@ -22,7 +22,7 @@ from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHeaderView,
 class Ui_wndw_archive(object):
     def setupUi(self, wndw_archive):
         if not wndw_archive.objectName():
-            wndw_archive.setObjectName(u"wndw_archive")
+            wndw_archive.setObjectName(u"Архив")
         wndw_archive.resize(801, 467)
         wndw_archive.setStyleSheet(u"background-color: qlineargradient(\n"
 "        spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
@@ -93,7 +93,7 @@ class Ui_wndw_archive(object):
     # setupUi
 
     def retranslateUi(self, wndw_archive):
-        wndw_archive.setWindowTitle(QCoreApplication.translate("wndw_archive", u"Dialog", None))
+        wndw_archive.setWindowTitle(QCoreApplication.translate("wndw_archive", u"Архив", None))
         self.lbl_archive.setText(QCoreApplication.translate("wndw_archive", u"\u0410\u0440\u0445\u0438\u0432 \u0443\u0434\u0430\u043b\u0451\u043d\u043d\u044b\u0445 \u0437\u0430\u043f\u0438\u0441\u0435\u0439", None))
         self.pb_delete.setText(QCoreApplication.translate("wndw_archive", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0437\u0430\u043f\u0438\u0441\u044c", None))
         self.pb_exit.setText(QCoreApplication.translate("wndw_archive", u"\u041d\u0430\u0437\u0430\u0434", None))

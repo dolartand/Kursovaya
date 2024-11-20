@@ -12,7 +12,7 @@ from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHeaderView,
 class Ui_wndw_search_by_name(object):
     def setupUi(self, wndw_search_by_name):
         if not wndw_search_by_name.objectName():
-            wndw_search_by_name.setObjectName(u"wndw_search_by_name")
+            wndw_search_by_name.setObjectName(u"Поиск")
         wndw_search_by_name.resize(400, 391)
         wndw_search_by_name.setStyleSheet(u"background-color: qlineargradient(\n"
 "        spread:pad, x1:0, y1:0, x2:1, y2:1, \n"
@@ -81,7 +81,7 @@ class Ui_wndw_search_by_name(object):
     # setupUi
 
     def retranslateUi(self, wndw_search_by_name):
-        wndw_search_by_name.setWindowTitle(QCoreApplication.translate("wndw_search_by_name", u"Dialog", None))
+        wndw_search_by_name.setWindowTitle(QCoreApplication.translate("wndw_search_by_name", u"Поиск", None))
         self.lbl_search_by_name.setText(QCoreApplication.translate("wndw_search_by_name", u"\u041f\u043e\u0438\u0441\u043a \u043f\u043e \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u044e \u0442\u0435\u0445\u043d\u0438\u043a\u0438", None))
         self.lbl_enter_name.setText(QCoreApplication.translate("wndw_search_by_name", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435", None))
         self.pb_show.setText(QCoreApplication.translate("wndw_search_by_name", u"\u0412\u044b\u0432\u0435\u0441\u0442\u0438", None))

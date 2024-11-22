@@ -3,6 +3,9 @@ from windows import Ui_help_wndw
 
 
 class Help(QMainWindow):
+    """
+    Окно "Помощь"
+    """
     def __init__(self):
         super(Help, self).__init__()
         self.ui = Ui_help_wndw()

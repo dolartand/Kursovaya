@@ -4,6 +4,12 @@ from database import ArchiveDatabase
 
 
 class AddNote(QMainWindow):
+    """
+    Окно добавления записи
+
+    Функционал:
+    Добавление новой записи в базу данных
+    """
     def __init__(self, db, update_table_callback):
         super(AddNote, self).__init__()
         self.db = db
@@ -13,6 +19,7 @@ class AddNote(QMainWindow):
 
         self.ui.pb_add.clicked.connect(self.add_note)
 
+    # Добавление записи
     def add_note(self):
         name = self.ui.le_name.text()
         item_type = self.ui.cb_add_type.currentText()
@@ -31,6 +38,12 @@ class AddNote(QMainWindow):
 
 
 class DeleteNote(QMainWindow):
+    """
+    Окно подтверждения удаления записи
+
+    Функционал:
+    Открытие окна для подтверждения удаления записи из базы данных
+    """
     def __init__(self, db, update_table_callback, item_id=None):
         super(DeleteNote, self).__init__()
         self.db = db
@@ -42,6 +55,7 @@ class DeleteNote(QMainWindow):
         self.ui.pb_yes.clicked.connect(self.confirm_delete)
         self.ui.pb_no.clicked.connect(self.close_delete)
 
+    # Подтверждение удаления записи
     def confirm_delete(self):
         if self.item_id is not None:
             self.archive_db = ArchiveDatabase("databases/archive.db")
@@ -49,11 +63,19 @@ class DeleteNote(QMainWindow):
             self.close()
             self.update_table_callback()
 
+    # Закрытие окна
     def close_delete(self):
         self.close()
 
 
 class EditNote(QMainWindow):
+    """
+    Окно редактирования записи
+
+    Функционал:
+    Загрузка данных выбранной записи для редактирования
+    Сохранение изменений в базе данных
+    """
     def __init__(self, db, update_table_callback):
         super(EditNote, self).__init__()
         self.db = db
@@ -63,6 +85,7 @@ class EditNote(QMainWindow):
 
         self.ui.pb_save.clicked.connect(self.save_changes)
 
+    # Загрузка данных выбранной записи
     def load_current_data(self, item_id):
         self.id = item_id
         item = self.db.fetch_item_by_id(item_id)
@@ -76,6 +99,7 @@ class EditNote(QMainWindow):
             self.ui.le_number_aud.setText(str(item[7]))
             self.ui.le_otvetstv.setText(item[8])
 
+    # Сохранение изменений
     def save_changes(self):
         name = self.ui.le_name.text()
         item_type = self.ui.cb_type_tech.currentText()

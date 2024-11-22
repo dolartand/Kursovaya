@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>616</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+background-color: qlineargradient(
+        spread:pad, x1:0, y1:0, x2:1, y2:1, 
+        stop:0 rgba(139,0,255, 20), 
+        stop:1 rgba(115,102,189, 40)  
+    );
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frm_table">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>541</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(254,254,34, 5)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="pb_delete">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>450</y>
+       <width>135</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+color: white;
+backgroung-color: rgba(254,254,34, 30);
+border: 1px solid rgba(254,254,34, 20);
+border-radius: 7px;
+}
+
+QPushButton:hover {
+background-color: rgba(254,254,34, 40);
+}
+
+QPushButton:pressed {
+background-color: rgba(254,254,34, 70);
+}</string>
+     </property>
+     <property name="text">
+      <string>Удалить запись</string>
+     </property>
+    </widget>
+    <widget class="QTableView" name="tv_main_table">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>491</width>
+       <height>431</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(254,254,34, 10)</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_edit">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>450</y>
+       <width>194</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+color: white;
+backgroung-color: rgba(254,254,34, 30);
+border: 1px solid rgba(254,254,34, 20);
+border-radius: 7px;
+}
+
+QPushButton:hover {
+background-color: rgba(254,254,34, 40);
+}
+
+QPushButton:pressed {
+background-color: rgba(254,254,34, 70);
+}</string>
+     </property>
+     <property name="text">
+      <string>Редактировать запись</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_add">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>450</y>
+       <width>150</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+color: white;
+backgroung-color: rgba(254,254,34, 30);
+border: 1px solid rgba(254,254,34, 20);
+border-radius: 7px;
+}
+
+QPushButton:hover {
+background-color: rgba(254,254,34, 40);
+}
+
+QPushButton:pressed {
+background-color: rgba(254,254,34, 70);
+}</string>
+     </property>
+     <property name="text">
+      <string>Добавить запись</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frm_search">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>50</y>
+      <width>231</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(254,254,34, 5)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="lbl_search_data">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;
+background-color: none;</string>
+       </property>
+       <property name="text">
+        <string>Поиск данных</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lbl_search_by">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: none;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Поиск по:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rb_name">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: none;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Названию</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rb_type">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: none;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Типу техники</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rb_year">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: none;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Году поступления</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rb_value">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: none;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Цене</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rb_amount">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: none;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Количеству на складе</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rb_condition">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: none;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Состоянию техники</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rb_number_aud">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: none;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Номеру аудитории</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rb_otvetstv">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: none;
+border: none;</string>
+       </property>
+       <property name="text">
+        <string>Фамилии ответственного</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pb_search">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+color: white;
+backgroung-color: rgba(254,254,34, 30);
+border: 1px solid rgba(254,254,34, 20);
+border-radius: 7px;
+}
+
+QPushButton:hover {
+background-color: rgba(254,254,34, 40);
+}
+
+QPushButton:pressed {
+background-color: rgba(254,254,34, 70);
+}</string>
+       </property>
+       <property name="text">
+        <string>Искать</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QFrame" name="frm_buttons">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>390</y>
+      <width>231</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(254,254,34, 5)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="pb_exit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>130</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+color: white;
+backgroung-color: rgba(254,254,34, 30);
+border: 1px solid rgba(254,254,34, 20);
+border-radius: 7px;
+}
+
+QPushButton:hover {
+background-color: rgba(254,254,34, 40);
+}
+
+QPushButton:pressed {
+background-color: rgba(254,254,34, 70);
+}</string>
+     </property>
+     <property name="text">
+      <string>Выход</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_about_author">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+color: white;
+backgroung-color: rgba(254,254,34, 30);
+border: 1px solid rgba(254,254,34, 20);
+border-radius: 7px;
+}
+
+QPushButton:hover {
+background-color: rgba(254,254,34, 40);
+}
+
+QPushButton:pressed {
+background-color: rgba(254,254,34, 70);
+}</string>
+     </property>
+     <property name="text">
+      <string>Об авторе</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_about_program">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>10</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+color: white;
+backgroung-color: rgba(254,254,34, 30);
+border: 1px solid rgba(254,254,34, 20);
+border-radius: 7px;
+}
+
+QPushButton:hover {
+background-color: rgba(254,254,34, 40);
+}
+
+QPushButton:pressed {
+background-color: rgba(254,254,34, 70);
+}</string>
+     </property>
+     <property name="text">
+      <string>О программе</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pb_show_archive">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>80</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+color: white;
+backgroung-color: rgba(254,254,34, 30);
+border: 1px solid rgba(254,254,34, 20);
+border-radius: 7px;
+}
+
+QPushButton:hover {
+background-color: rgba(254,254,34, 40);
+}
+
+QPushButton:pressed {
+background-color: rgba(254,254,34, 70);
+}</string>
+     </property>
+     <property name="text">
+      <string>Открыть архив</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>10</y>
+      <width>381</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: none;</string>
+    </property>
+    <property name="text">
+     <string>Книга компьютерной техники</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="add_action"/>
+    <addaction name="delete_action"/>
+    <addaction name="edit_action"/>
+    <addaction name="archive_action"/>
+    <addaction name="separator"/>
+    <addaction name="exit_action"/>
+   </widget>
+   <widget class="QMenu" name="menuInformation">
+    <property name="title">
+     <string>Information</string>
+    </property>
+    <addaction name="about_author_action"/>
+    <addaction name="about_program_action"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="help_action"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuInformation"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="action">
+   <property name="text">
+    <string>ПРграмма</string>
+   </property>
+  </action>
+  <action name="add_action">
+   <property name="text">
+    <string>Добавить запись</string>
+   </property>
+  </action>
+  <action name="delete_action">
+   <property name="text">
+    <string>Удалить запись</string>
+   </property>
+  </action>
+  <action name="edit_action">
+   <property name="text">
+    <string>Редактировать запись</string>
+   </property>
+  </action>
+  <action name="archive_action">
+   <property name="text">
+    <string>Открыть архив удалённых записей</string>
+   </property>
+  </action>
+  <action name="about_author_action">
+   <property name="text">
+    <string>Об авторе</string>
+   </property>
+  </action>
+  <action name="about_program_action">
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="exit_action">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="help_action">
+   <property name="text">
+    <string>Помощь</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>pb_delete</tabstop>
+  <tabstop>pb_add</tabstop>
+  <tabstop>pb_edit</tabstop>
+  <tabstop>tv_main_table</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

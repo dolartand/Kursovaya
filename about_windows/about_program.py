@@ -3,6 +3,9 @@ from windows import Ui_wndw_about_program
 
 
 class AboutProgram(QMainWindow):
+    """
+    Окно "О программе"
+    """
     def __init__(self):
         super(AboutProgram, self).__init__()
         self.ui = Ui_wndw_about_program()

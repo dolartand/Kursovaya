@@ -93,7 +93,7 @@ class Ui_wndw_splash_screen(object):
         self.label_12 = QLabel(wndw_splash_screen)
         self.label_12.setObjectName(u"label_12")
         self.label_12.setGeometry(QRect(110, 250, 131, 151))
-        self.label_12.setPixmap(QPixmap(u"resourses/splash_screen_logo.png"))
+        self.label_12.setPixmap(QPixmap(u"assets/splash_screen_logo.png"))
 
         # Кнопка для перехода дальше
         self.pb_next = QPushButton(wndw_splash_screen)

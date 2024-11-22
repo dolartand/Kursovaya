@@ -1,4 +1,4 @@
-from windows import *
+from src.windows import *
 from PySide6.QtWidgets import QDialog
 from PySide6.QtGui import QStandardItemModel, QStandardItem
 

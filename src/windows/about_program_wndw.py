@@ -27,7 +27,7 @@ class Ui_wndw_about_program(object):
 
         # Лейбл для отображения GIF
         self.lbl_gif = QLabel(self.frame)
-        self.movie = QMovie(u"resourses/database_table.gif")
+        self.movie = QMovie(u"assets/database_table.gif")
         self.movie.setScaledSize(QSize(300, 300))
         self.lbl_gif.setMovie(self.movie)
         self.movie.start()

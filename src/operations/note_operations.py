@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QMainWindow
-from windows import *
-from database import ArchiveDatabase
+from src.windows import *
+from src.database import ArchiveDatabase
 
 
 class AddNote(QMainWindow):

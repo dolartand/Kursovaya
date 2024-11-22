@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QMainWindow
-from windows import Ui_help_wndw
+from src.windows import Ui_help_wndw
 
 
 class Help(QMainWindow):

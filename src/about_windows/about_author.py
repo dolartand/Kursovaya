@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QMainWindow
-from windows import Ui_wndw_about_author
+from src.windows import Ui_wndw_about_author
 
 
 class AboutAuthor(QMainWindow):

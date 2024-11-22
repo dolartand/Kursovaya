@@ -1,7 +1,7 @@
 from PySide6.QtCore import Qt
-from operations import *
+from src.operations import *
 from database import Database
-from about_windows import *
+from src.about_windows import *
 from archive import Archive
 
 

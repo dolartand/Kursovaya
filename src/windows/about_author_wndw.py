@@ -33,7 +33,7 @@ class Ui_wndw_about_author(object):
         self.label.setObjectName("label")
         self.label.setGeometry(QRect(10, 10, 361, 291))
         self.label.setStyleSheet("background-color: none;\nborder: none;")
-        self.label.setPixmap(QPixmap("resourses/author_image.jpg"))
+        self.label.setPixmap(QPixmap("assets/author_image.jpg"))
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         # Добавление и настройка текста "Автор" (label_2)

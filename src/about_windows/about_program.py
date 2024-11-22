@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QMainWindow
-from windows import Ui_wndw_about_program
+from src.windows import Ui_wndw_about_program
 
 
 class AboutProgram(QMainWindow):

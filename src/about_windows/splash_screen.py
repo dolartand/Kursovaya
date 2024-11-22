@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QMainWindow
-from PySide6.QtCore import QTimer, QEvent
-from windows import *
+from PySide6.QtCore import QTimer
+from src.windows import *
 
 
 class SplashScreen(QMainWindow):
@@ -22,7 +22,7 @@ class SplashScreen(QMainWindow):
 
     # Открытие главного окна приложения
     def open_app(self):
-        from application import TechBook
+        from src.application import TechBook
         self.app_window = TechBook()
         self.app_window.show()
         self.close()

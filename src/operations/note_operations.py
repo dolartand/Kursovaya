@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QMainWindow
+from PySide6.QtWidgets import QMainWindow, QMessageBox
 from src.windows import *
 from src.database import ArchiveDatabase
 
@@ -21,16 +21,33 @@ class AddNote(QMainWindow):
 
     # Добавление записи
     def add_note(self):
-        name = self.ui.le_name.text()
-        item_type = self.ui.cb_add_type.currentText()
-        year = int(self.ui.le_year.text().strip())
-        price = float(self.ui.le_value.text())
-        amount = int(self.ui.le_amount.text())
-        condition = self.ui.cb_add_sost.currentText()
-        number_aud = int(self.ui.le_number_aud.text())
-        responsible = self.ui.le_otvetstv.text()
+        name_text = self.ui.le_name.text()
+        item_type_text = self.ui.cb_add_type.currentText()
+        year_text = self.ui.le_year.text().strip()
+        price_text = self.ui.le_value.text()
+        amount_text = self.ui.le_amount.text()
+        condition_text = self.ui.cb_add_sost.currentText()
+        number_aud_text = self.ui.le_number_aud.text()
+        responsible_text = self.ui.le_otvetstv.text()
 
-        self.db.add_item(name, item_type, year, price, amount, condition, number_aud, responsible)
+        if not name_text.isalpha() or not responsible_text.isalpha():
+            QMessageBox.warning(self, "Ошибка", "Введите корректные данные.")
+            return
+
+        if not year_text.isdigit() or not number_aud_text.isdigit() or not amount_text.isdigit():
+            QMessageBox.warning(self, "Ошибка", "Введите корректные данные.")
+            return
+        year = int(year_text)
+        number_aud = int(number_aud_text)
+        amount = int(amount_text)
+
+        try:
+            price = float(price_text)
+        except ValueError:
+            QMessageBox.warning(self, "Ошибка", "Введите корректные данные.")
+            return
+
+        self.db.add_item(name_text, item_type_text, year, price, amount, condition_text, number_aud, responsible_text)
 
         self.close()
 

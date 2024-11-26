@@ -1,6 +1,17 @@
 from src.windows import *
-from PySide6.QtWidgets import QDialog
+from PySide6.QtWidgets import QDialog, QMessageBox
 from PySide6.QtGui import QStandardItemModel, QStandardItem
+
+# Заполняет таблицу данными, которые были получены из базы данных
+def fill_table(model, items):
+    model.setRowCount(len(items))
+    model.setColumnCount(9)
+    headers = ['ID', 'Название', 'Тип', 'Год', 'Стоимость', 'Кол-во', 'Состояние', 'Номер аудитории',
+               'Фамилия ответственного']
+    model.setHorizontalHeaderLabels(headers)
+    for row, item in enumerate(items):
+        for column, value in enumerate(item):
+            model.setItem(row, column, QStandardItem(str(value)))
 
 
 class SearchByName(QDialog):
@@ -22,15 +33,13 @@ class SearchByName(QDialog):
     # Отображение результатов поиска
     def show_results(self):
         name = self.ui.le_enter_name.text()
+
+        if not name.isalpha():
+            QMessageBox.warning(self, "Ошибка", "Введите корректные данные.")
+            return
+
         items = self.db.search_by_name(name)
-        self.model.setRowCount(len(items))
-        self.model.setColumnCount(9)
-        headers = ['ID', 'Название', 'Тип', 'Год', 'Стоимость', 'Кол-во', 'Состояние', 'Номер аудитории',
-                   'Фамилия ответственного']
-        self.model.setHorizontalHeaderLabels(headers)
-        for row, item in enumerate(items):
-            for column, value in enumerate(item):
-                self.model.setItem(row, column, QStandardItem(str(value)))
+        fill_table(self.model, items)
 
 
 class SearchByType(QDialog):
@@ -53,14 +62,7 @@ class SearchByType(QDialog):
     def show_results(self):
         tech_type = self.ui.cb_type_tech.currentText()
         items = self.db.search_by_type(tech_type)
-        self.model.setRowCount(len(items))
-        self.model.setColumnCount(9)
-        headers = ['ID', 'Название', 'Тип', 'Год', 'Стоимость', 'Кол-во', 'Состояние', 'Номер аудитории',
-                   'Фамилия ответственного']
-        self.model.setHorizontalHeaderLabels(headers)
-        for row, item in enumerate(items):
-            for column, value in enumerate(item):
-                self.model.setItem(row, column, QStandardItem(str(value)))
+        fill_table(self.model, items)
 
 
 class SearchByYear(QDialog):
@@ -82,15 +84,13 @@ class SearchByYear(QDialog):
     # Отображение результатов поиска
     def show_results(self):
         year = self.ui.le_enter_year.text()
+
+        if not year.isdigit():
+            QMessageBox.warning(self, "Ошибка", "Введите корректные данные.")
+            return
+
         items = self.db.search_by_year(year)
-        self.model.setRowCount(len(items))
-        self.model.setColumnCount(9)
-        headers = ['ID', 'Название', 'Тип', 'Год', 'Стоимость', 'Кол-во', 'Состояние', 'Номер аудитории',
-                   'Фамилия ответственного']
-        self.model.setHorizontalHeaderLabels(headers)
-        for row, item in enumerate(items):
-            for column, value in enumerate(item):
-                self.model.setItem(row, column, QStandardItem(str(value)))
+        fill_table(self.model, items)
 
 
 class SearchByValue(QDialog):
@@ -112,15 +112,16 @@ class SearchByValue(QDialog):
     # Отображение результатов поиска
     def show_results(self):
         price = self.ui.le_enter_value.text()
+
+        try:
+            price = float(price)
+        except ValueError:
+            QMessageBox.warning(self, "Ошибка", "Введите корректные данные.")
+            return
+        price = str(price)
+
         items = self.db.search_by_price(price)
-        self.model.setRowCount(len(items))
-        self.model.setColumnCount(9)
-        headers = ['ID', 'Название', 'Тип', 'Год', 'Стоимость', 'Кол-во', 'Состояние', 'Номер аудитории',
-                   'Фамилия ответственного']
-        self.model.setHorizontalHeaderLabels(headers)
-        for row, item in enumerate(items):
-            for column, value in enumerate(item):
-                self.model.setItem(row, column, QStandardItem(str(value)))
+        fill_table(self.model, items)
 
 
 class SearchByAmount(QDialog):
@@ -142,15 +143,13 @@ class SearchByAmount(QDialog):
     # Отображение результатов поиска
     def show_results(self):
         amount = self.ui.le_enter_amount.text()
+
+        if not amount.isdigit():
+            QMessageBox.warning(self, "Ошибка", "Введите корректные данные.")
+            return
+
         items = self.db.search_by_amount(amount)
-        self.model.setRowCount(len(items))
-        self.model.setColumnCount(9)
-        headers = ['ID', 'Название', 'Тип', 'Год', 'Стоимость', 'Кол-во', 'Состояние', 'Номер аудитории',
-                   'Фамилия ответственного']
-        self.model.setHorizontalHeaderLabels(headers)
-        for row, item in enumerate(items):
-            for column, value in enumerate(item):
-                self.model.setItem(row, column, QStandardItem(str(value)))
+        fill_table(self.model, items)
 
 
 class SearchByCondition(QDialog):
@@ -173,14 +172,7 @@ class SearchByCondition(QDialog):
     def show_results(self):
         condition = self.ui.cb_condition.currentText()
         items = self.db.search_by_condition(condition)
-        self.model.setRowCount(len(items))
-        self.model.setColumnCount(9)
-        headers = ['ID', 'Название', 'Тип', 'Год', 'Стоимость', 'Кол-во', 'Состояние', 'Номер аудитории',
-                   'Фамилия ответственного']
-        self.model.setHorizontalHeaderLabels(headers)
-        for row, item in enumerate(items):
-            for column, value in enumerate(item):
-                self.model.setItem(row, column, QStandardItem(str(value)))
+        fill_table(self.model, items)
 
 
 class SearchByNumberAud(QDialog):
@@ -202,15 +194,13 @@ class SearchByNumberAud(QDialog):
     # Отображение результатов поиска
     def show_results(self):
         number = self.ui.le_enter_number.text()
+
+        if not number.isdigit():
+            QMessageBox.warning(self, "Ошибка", "Введите корректные данные.")
+            return
+
         items = self.db.search_by_number_aud(number)
-        self.model.setRowCount(len(items))
-        self.model.setColumnCount(9)
-        headers = ['ID', 'Название', 'Тип', 'Год', 'Стоимость', 'Кол-во', 'Состояние', 'Номер аудитории',
-                   'Фамилия ответственного']
-        self.model.setHorizontalHeaderLabels(headers)
-        for row, item in enumerate(items):
-            for column, value in enumerate(item):
-                self.model.setItem(row, column, QStandardItem(str(value)))
+        fill_table(self.model, items)
 
 
 class SearchByResponsible(QDialog):
@@ -232,12 +222,10 @@ class SearchByResponsible(QDialog):
     # Отображение результатов поиска
     def show_results(self):
         fam = self.ui.le_enter_fam.text()
+
+        if not fam.isalpha():
+            QMessageBox.warning(self, "Ошибка", "Введите корректные данные.")
+            return
+
         items = self.db.search_by_responsible(fam)
-        self.model.setRowCount(len(items))
-        self.model.setColumnCount(9)
-        headers = ['ID', 'Название', 'Тип', 'Год', 'Стоимость', 'Кол-во', 'Состояние', 'Номер аудитории',
-                   'Фамилия ответственного']
-        self.model.setHorizontalHeaderLabels(headers)
-        for row, item in enumerate(items):
-            for column, value in enumerate(item):
-                self.model.setItem(row, column, QStandardItem(str(value)))
+        fill_table(self.model, items)

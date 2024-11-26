@@ -1,13 +1,3 @@
-# -*- coding: utf-8 -*-
-
-################################################################################
-## Form generated from reading UI file 'search_by_number_aud.ui'
-##
-## Created by: Qt User Interface Compiler version 6.8.0
-##
-## WARNING! All changes made in this file will be lost when recompiling UI file!
-################################################################################
-
 from PySide6.QtCore import (QCoreApplication, QRect, Qt, QSize, QMetaObject)
 from PySide6.QtGui import QFont
 from PySide6.QtWidgets import QFrame, QLabel, QLineEdit, QPushButton, QTableView
